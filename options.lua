@@ -17,6 +17,19 @@ return {
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
   },
+  o = {
+    autoread = true,
+    winwidth = 10,
+    winminwidth = 10,
+    equalalways = true,
+    pumblend = vim.g.winblend,
+    shell = vim.fn.executable "pwsh" and "pwsh" or "powershell",
+    shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+    shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+    shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+    shellquote = "",
+    shellxquote = "",
+  },
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)
