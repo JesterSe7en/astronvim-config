@@ -1,5 +1,5 @@
--- local fn = require "user.util.fn"
--- local telescope = require "user.util.telescope"
+local fn = require "user.util.fn"
+local telescope = require "user.util.telescope"
 
 return {
   "mfussenegger/nvim-dap",
@@ -10,10 +10,10 @@ return {
   config = function()
     local dap = require "dap"
     local CODELLDB_DIR = require("mason-registry").get_package("codelldb"):get_install_path()
-      .. "/extension/adapter/codelldb"
+        .. "/extension/adapter/codelldb"
     local PYTHON_DIR = require("mason-registry").get_package("debugpy"):get_install_path() .. "/venv/Scripts/python"
     local NODE_DIR = require("mason-registry").get_package("node-debug2-adapter"):get_install_path()
-      .. "/out/src/nodeDebug.js"
+        .. "/out/src/nodeDebug.js"
 
     dap.adapters.codelldb = {
       name = "codelldb",
@@ -44,7 +44,7 @@ return {
     dap.configurations.python = {
       {
         name = "Launch file",
-        type = "py", -- the type here established the link to the adapter definition: `dap.adapters.python`
+        type = "py",         -- the type here established the link to the adapter definition: `dap.adapters.python`
         request = "launch",
         program = "${file}", -- This configuration will launch the current file if used.
       },
@@ -98,24 +98,24 @@ return {
     dap.configurations.rust = {
       lldb,
     }
-    dap.configurations.javascript = {
-      {
-        name = "Launch",
-        type = "node",
-        request = "launch",
-        program = "${file}",
-        cwd = vim.fn.getcwd(),
-        sourceMaps = true,
-        protocol = "inspector",
-        console = "integratedTerminal",
-      },
-      {
-        -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-        name = "Attach to process - test",
-        type = "node",
-        request = "attach",
-        processId = require("dap.utils").pick_process,
-      },
-    }
+    -- dap.configurations.javascript = {
+    --   {
+    --     name = "Launch",
+    --     type = "node",
+    --     request = "launch",
+    --     program = "${file}",
+    --     cwd = vim.fn.getcwd(),
+    --     sourceMaps = true,
+    --     protocol = "inspector",
+    --     console = "integratedTerminal",
+    --   },
+    --   {
+    --     -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+    --     name = "Attach to process - test",
+    --     type = "node",
+    --     request = "attach",
+    --     processId = require("dap.utils").pick_process,
+    --   },
+    -- }
   end,
 }
