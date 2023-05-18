@@ -18,6 +18,13 @@ return {
       desc = "Pick to close",
     },
     ["<leader>o"] = { "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header" },
+
+    --search stuff
+    ["<C-d>"] = { "<C-d>zz" }, --scroll half page down but keep cursor in the middle
+    ["<C-u>"] = { "<C-u>zz" }, --scroll half page up but keep cursor in the middle
+    ["n"] = { "nzzzv" },       -- when searching (using "/") keep search term in the middle of the screen
+    ["N"] = { "Nzzzv" },       -- same thing but backwards
+
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
