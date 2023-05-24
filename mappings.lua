@@ -22,6 +22,8 @@ return {
     --search stuff
     ["<C-d>"] = { "<C-d>zz" }, --scroll half page down but keep cursor in the middle
     ["<C-u>"] = { "<C-u>zz" }, --scroll half page up but keep cursor in the middle
+    ["<C-f>"] = { "<C-f>zz" }, --scroll full page down but keep cursor in the middle
+    ["<C-b>"] = { "<C-b>zz" }, --scroll full page up but keep cursor in the middle
     ["n"] = { "nzzzv" },       -- when searching (using "/") keep search term in the middle of the screen
     ["N"] = { "Nzzzv" },       -- same thing but backwards
 
