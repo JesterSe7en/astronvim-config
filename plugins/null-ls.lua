@@ -19,4 +19,11 @@ return {
     }
     return config -- return final config table
   end,
+
+  require("crates").setup {
+    null_ls = {
+      enabled = true,
+      name = "crates.nvim",
+    },
+  },
 }

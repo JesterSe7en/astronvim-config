@@ -11,6 +11,7 @@ return {
     },
     sources = {
       { name = "nvim_lsp", priority = 1000 },
+      { name = "crates", priority = 900 },
       { name = "codeium", priority = 750 },
       { name = "luasnip", priority = 700 },
       { name = "path", priority = 650 },
